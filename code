@@ -1,0 +1,130 @@
+#define BLYNK_PRINT Serial
+#include <WiFi.h>
+#include <BlynkSimpleEsp32.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <HTTPClient.h>
+
+// Blynk Credentials
+char auth[] = "Your_Blynk_Auth_Token";
+char ssid[] = "Your_WiFi_SSID";
+char pass[] = "Your_WiFi_Password";
+
+// Google Sheets API URL (Webhook)
+String sheetURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?";
+
+// Pin Definitions
+#define VOLTAGE_SENSOR A0
+#define CURRENT_SENSOR_FAN A1
+#define CURRENT_SENSOR_AC A2
+#define CURRENT_SENSOR_BULB A3
+#define RELAY_FAN 5
+#define RELAY_AC 6
+#define RELAY_BULB 7
+
+// OLED Display Setup
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+// Tariff Rate
+float tariff_per_kWh = 5.0;
+
+// Function to Read Voltage (ZMPT101B)
+float getVoltage() {
+  int sensorValue = analogRead(VOLTAGE_SENSOR);
+  float voltage = (sensorValue / 1023.0) * 230.0;
+  return voltage;
+}
+
+// Function to Read Current (SCT-013-000)
+float getCurrent(int sensorPin) {
+  int sensorValue = analogRead(sensorPin);
+  float current = (sensorValue / 1023.0) * 30.0; // Adjust based on calibration
+  return current;
+}
+
+void sendToGoogleSheets(float voltage, float currentFan, float currentAC, float currentBulb, float power, float energy, float cost) {
+  String url = sheetURL + "voltage=" + String(voltage) + "&currentFan=" + String(currentFan) + "&currentAC=" + String(currentAC) + "&currentBulb=" + String(currentBulb) + "&power=" + String(power) + "&energy=" + String(energy) + "&cost=" + String(cost);
+  HTTPClient http;
+  http.begin(url);
+  int httpCode = http.GET();
+  http.end();
+}
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, pass);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi Connected");
+  Blynk.begin(auth, ssid, pass);
+
+  pinMode(RELAY_FAN, OUTPUT);
+  pinMode(RELAY_AC, OUTPUT);
+  pinMode(RELAY_BULB, OUTPUT);
+  
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("OLED Display Not Found");
+    while (1);
+  }
+  display.clearDisplay();
+}
+
+void loop() {
+  Blynk.run();
+
+  float voltage = getVoltage();
+  float currentFan = getCurrent(CURRENT_SENSOR_FAN);
+  float currentAC = getCurrent(CURRENT_SENSOR_AC);
+  float currentBulb = getCurrent(CURRENT_SENSOR_BULB);
+
+  float powerFan = voltage * currentFan;
+  float powerAC = voltage * currentAC;
+  float powerBulb = voltage * currentBulb;
+  float totalPower = powerFan + powerAC + powerBulb;
+
+  float energy = (totalPower * 1) / 1000; // Energy in kWh (assuming 1-hour interval)
+  float cost = energy * tariff_per_kWh;
+
+  // Display on OLED
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 0);
+  display.print("Voltage: ");
+  display.print(voltage);
+  display.println("V");
+  display.print("Fan: ");
+  display.print(currentFan);
+  display.println("A");
+  display.print("AC: ");
+  display.print(currentAC);
+  display.println("A");
+  display.print("Bulb: ");
+  display.print(currentBulb);
+  display.println("A");
+  display.print("Power: ");
+  display.print(totalPower);
+  display.println("W");
+  display.print("Cost: Rs ");
+  display.print(cost);
+  display.display();
+
+  // Send Data to Blynk
+  Blynk.virtualWrite(V1, voltage);
+  Blynk.virtualWrite(V2, currentFan);
+  Blynk.virtualWrite(V3, currentAC);
+  Blynk.virtualWrite(V4, currentBulb);
+  Blynk.virtualWrite(V5, totalPower);
+  Blynk.virtualWrite(V6, energy);
+  Blynk.virtualWrite(V7, cost);
+
+  // Send Data to Google Sheets
+  sendToGoogleSheets(voltage, currentFan, currentAC, currentBulb, totalPower, energy, cost);
+  
+  delay(5000); // Send data every 5 seconds
+}
