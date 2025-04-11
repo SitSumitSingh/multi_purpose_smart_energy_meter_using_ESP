@@ -36,21 +36,14 @@ Several existing systems use Arduino and GSM for single-load energy monitoring. 
      within the casing of the transformer.
 
    ##### Specifications :
-  * Input Current: 0-30A AC
-    
-  * Output Signal: DC 0-1 V
-    
-  * Non-linearity: 2-3 %
-    
-  * Built-in resistance (RL): 60 Ω
-    
-  * Turn Ratio: 20000:1
-    
-  * Resistance Grade: Grade B
-    
-  * Work Temperature: -25 °C~+70 °C
-    
-  * Dielectric Strength (between shell and output): 1000 V AC / 1 min 5 mA
+  * Input Current: 0-30A AC     
+  * Output Signal: DC 0-1 V    
+  * Non-linearity: 2-3 %   
+  * Built-in resistance (RL): 60 Ω    
+  * Turn Ratio: 2000:1         
+  * Resistance Grade: Grade B    
+  * Work Temperature: -25 °C ~ +70 °C        
+  * Dielectric Strength (between shell and output): 1000 V AC / 1 min 5 mA     
 
 
 #### 2. ZMPT101b (voltage sensor) x1
@@ -62,30 +55,46 @@ The ZMPT101B AC Single Phase voltage sensor module is based on a high precision 
 The Modules can measure voltage within 250V AC voltage & the corresponding analog output can be adjusted. The module is simple to use and comes with a multi-turn trim potentiometer for adjusting and calibrating the ADC output.
 
 ##### Specifications
-* Voltage up to 250 volts can be measured
-  
-* Lightweight with on-board micro-precision voltage transformer
-  
-* High precision on-board op-amp circuit
-  
-* Operating temperature : 40ºC ~ + 70ºC
-  
-* Supply voltage 5 volts to 30 volts
+* Voltage up to 250 volts can be measured    
+* Lightweight with on-board micro-precision voltage transformer     
+* High precision on-board op-amp circuit      
+* Operating temperature : 40ºC ~ + 70ºC     
+* Supply voltage 5 volts to 30 volts       
 
 #### 3. Two Channel Relay Module x1
 
 ![image](https://github.com/user-attachments/assets/2685989e-1ca3-4bf0-b677-e7a30465cedb)
 
-* Low Level Trigger Relay Module
-* Two separate LEDs for On/Off indication of the Relay.
-* Triggering input voltage 3.3V – 5V.
-* Back EMF protection
-* Opto isolation circuitry
-* Module with diode current protection, short response time
-* AC Control Voltage: 250V @max.10A
-* DC Control Voltage: 30V @max. 10A
+* Low Level Trigger Relay Module   
+* Two separate LEDs for On/Off indication of the Relay.  
+* Triggering input voltage 3.3V – 5V.  
+* Back EMF protection  
+* Opto isolation circuitry   
+* Module with diode current protection, short response time   
+* AC Control Voltage: 250V @max.10A  
+* DC Control Voltage: 30V @max. 10A   
   
 #### 4. ESP-WROOM-32 x1
+The ESP-WROOM-32 is a powerful Wi-Fi + Bluetooth combo module developed by Espressif, and it's the core module in many ESP32-based development boards. Here's a quick breakdown of its key features and why it's popular in IoT and embedded systems projects:
+
+![image](https://github.com/user-attachments/assets/ee644498-e422-44f8-a43a-6212c5a91a60)
+
+##### Key Features :
+* Processor: Dual-core Tensilica LX6 microprocessor, up to 240 MHz     
+* Memory: 520 KB SRAM   
+4 MB Flash (typically, depending on the breakout board)   
+* Wireless:
+    Wi-Fi: 802.11 b/g/n.       
+    Bluetooth: v4.2 BR/EDR and BLE    
+* GPIO Pins: 34 programmable GPIOs (input/output, PWM, ADC, DAC, I2C, SPI, UART, etc.)    
+* ADC: 12-bit, 18 channels (some shared with other functions)     
+* DAC: 2 channels (8-bit)      
+* Touch Sensors: 10 capacitive touch inputs    
+* PWM: Supported on all GPIOs    
+* Security: Secure boot, flash encryption, and cryptographic hardware acceleration    
+* Operating Voltage: 3.0V to 3.3V    
+* Power Consumption: Ultra-low power modes supported   
+  
 #### 5. OLED display x1
 #### 6. Capacitor(10µF) x2
 
