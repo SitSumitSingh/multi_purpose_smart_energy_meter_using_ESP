@@ -30,7 +30,8 @@ Several existing systems use Arduino and GSM for single-load energy monitoring. 
      are for measuring alternating current. They are particularly useful for measuring whole building electricity consumption. The SCT-013 current sensors can be clipped straight either 
      to the live or neutral wire without having to do any high voltage electrical work.
      
-  ![image](https://github.com/user-attachments/assets/701d9088-86ac-4439-ab47-3ab3a84d79c5)
+     ![image](https://github.com/user-attachments/assets/50eb48be-560c-4152-aa7a-25318080674d)
+
   
    Like any other transformer, a current transformer has a primary winding, a magnetic core, and a secondary winding. The secondary winding comprises many turns of fine wire housed 
      within the casing of the transformer.
