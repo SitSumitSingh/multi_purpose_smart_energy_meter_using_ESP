@@ -100,8 +100,9 @@ The ESP-WROOM-32 is a powerful Wi-Fi + Bluetooth combo module developed by Espre
 #### 5. OLED display x1 (SSD1306 0.96 inch )
 An OLED (organic light-emitting diode) is used frequently in displaying texts, bitmap images, shapes, and different types of clocks. They offer good view angles and pixel density in a cost-effective manner.
 
-![image](https://github.com/user-attachments/assets/3416a738-be92-47c2-9000-3770bcb4d8a6)
-![image](https://github.com/user-attachments/assets/c711d1ca-64fd-4898-82f7-cb6e1b1f7534)
+
+<img src="https://github.com/user-attachments/assets/3416a738-be92-47c2-9000-3770bcb4d8a6" width="300"/>
+<img src="https://github.com/user-attachments/assets/c711d1ca-64fd-4898-82f7-cb6e1b1f7534" width="300"/>
 
 ##### Specifications
 * Size :	0.96 inch    
@@ -113,7 +114,8 @@ An OLED (organic light-emitting diode) is used frequently in displaying texts, b
 
 #### 6. Capacitor(10µF) x2
 
-![image](https://github.com/user-attachments/assets/729d783d-8176-4e05-8085-85eec1a4d77f)
+<img src="https://github.com/user-attachments/assets/729d783d-8176-4e05-8085-85eec1a4d77f" width="30%" />
+
 
 
 
