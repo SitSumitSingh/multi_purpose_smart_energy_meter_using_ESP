@@ -128,7 +128,7 @@ An OLED (organic light-emitting diode) is used frequently in displaying texts, b
 
 ![circuit_image (1)](https://github.com/user-attachments/assets/0b1b877a-8d76-43c8-ad8c-1618a8dff117)
 
-Component----ESP32
+Component----ESP32      
 Current_1---- 32          
 Current_2---- 33       
 Relay_1---- 25     
