@@ -22,12 +22,60 @@ Several existing systems use Arduino and GSM for single-load energy monitoring. 
 * Blynk IoT platform for mobile-based visualization.
 
 ### 4. Components used 
-* SCT-013-030 (current sensor) x2
-* ZMPT101b (voltage sensor) x1
-* Relay x2
-* ESP-WROOM-32 x1
-* OLED display x1
-* Capacitor(10µF) x2
+#### 1. SCT-013-030 (current sensor) x2
+  
+  ![image](https://github.com/user-attachments/assets/ad44aa54-9d6c-468d-bb39-d27f56a4cad1)
+  
+   The SCT-013 is a Non-invasive AC Current Sensor Split Core Type Clamp Meter Sensor that can be used to measure AC current up to 30 amperes. Current transformers (CTs) are sensors 
+     are for measuring alternating current. They are particularly useful for measuring whole building electricity consumption. The SCT-013 current sensors can be clipped straight either 
+     to the live or neutral wire without having to do any high voltage electrical work.
+     
+  ![image](https://github.com/user-attachments/assets/701d9088-86ac-4439-ab47-3ab3a84d79c5)
+  
+   Like any other transformer, a current transformer has a primary winding, a magnetic core, and a secondary winding. The secondary winding comprises many turns of fine wire housed 
+     within the casing of the transformer.
+
+   ##### Specifications :
+  * Input Current: 0-30A AC
+    
+  * Output Signal: DC 0-1 V
+    
+  * Non-linearity: 2-3 %
+    
+  * Built-in resistance (RL): 60 Ω
+    
+  * Turn Ratio: 20000:1
+    
+  * Resistance Grade: Grade B
+    
+  * Work Temperature: -25 °C~+70 °C
+    
+  * Dielectric Strength (between shell and output): 1000 V AC / 1 min 5 mA
+
+
+#### 2. ZMPT101b (voltage sensor) x1
+
+![image](https://github.com/user-attachments/assets/e3c2baff-99c1-4b04-9374-2c743cc0c512)
+
+The ZMPT101B AC Single Phase voltage sensor module is based on a high precision ZMPT101B voltage Transformer used to measure the accurate AC voltage with a voltage transformer. This is an ideal choice to measure the AC voltage using Arduino or ESP32.
+
+The Modules can measure voltage within 250V AC voltage & the corresponding analog output can be adjusted. The module is simple to use and comes with a multi-turn trim potentiometer for adjusting and calibrating the ADC output.
+
+##### Specifications
+* Voltage up to 250 volts can be measured
+  
+* Lightweight with on-board micro-precision voltage transformer
+  
+* High precision on-board op-amp circuit
+  
+* Operating temperature : 40ºC ~ + 70ºC
+  
+* Supply voltage 5 volts to 30 volts
+
+#### 3. Relay x2
+#### 4. ESP-WROOM-32 x1
+#### 5. OLED display x1
+#### 6. Capacitor(10µF) x2
 
 
   
