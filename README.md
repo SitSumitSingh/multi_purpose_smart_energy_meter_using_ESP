@@ -66,6 +66,7 @@ The Modules can measure voltage within 250V AC voltage & the corresponding analo
 
 ![image](https://github.com/user-attachments/assets/2685989e-1ca3-4bf0-b677-e7a30465cedb)
 
+##### Specifications
 * Low Level Trigger Relay Module   
 * Two separate LEDs for On/Off indication of the Relay.  
 * Triggering input voltage 3.3V – 5V.  
@@ -96,8 +97,26 @@ The ESP-WROOM-32 is a powerful Wi-Fi + Bluetooth combo module developed by Espre
 * Operating Voltage: 3.0V to 3.3V    
 * Power Consumption: Ultra-low power modes supported   
   
-#### 5. OLED display x1
+#### 5. OLED display x1 (SSD1306 0.96 inch )
+An OLED (organic light-emitting diode) is used frequently in displaying texts, bitmap images, shapes, and different types of clocks. They offer good view angles and pixel density in a cost-effective manner.
+
+![image](https://github.com/user-attachments/assets/3416a738-be92-47c2-9000-3770bcb4d8a6)
+![image](https://github.com/user-attachments/assets/c711d1ca-64fd-4898-82f7-cb6e1b1f7534)
+
+##### Specifications
+* Size :	0.96 inch    
+* Terminals :	4   
+* Pixels :	128×64    
+* Communication :	I2C     
+* VCC	: 3.3V-5V    
+* Operating Temperature	: -40℃ to +80℃   
+
 #### 6. Capacitor(10µF) x2
+
+![image](https://github.com/user-attachments/assets/729d783d-8176-4e05-8085-85eec1a4d77f)
+
+
+
 
 
   
