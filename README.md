@@ -22,7 +22,7 @@ Several existing systems use Arduino and GSM for single-load energy monitoring. 
 * Blynk IoT platform for mobile-based visualization.
 
 ### 4. Components used 
-#### 1. SCT-013-030 (current sensor) x2
+#### I. SCT-013-030 (current sensor) x2
   
   ![image](https://github.com/user-attachments/assets/ad44aa54-9d6c-468d-bb39-d27f56a4cad1)
   
@@ -47,7 +47,7 @@ Several existing systems use Arduino and GSM for single-load energy monitoring. 
   * Dielectric Strength (between shell and output): 1000 V AC / 1 min 5 mA     
 
 
-#### 2. ZMPT101b (voltage sensor) x1
+#### II. ZMPT101b (voltage sensor) x1
 
 ![image](https://github.com/user-attachments/assets/e3c2baff-99c1-4b04-9374-2c743cc0c512)
 
@@ -62,7 +62,7 @@ The Modules can measure voltage within 250V AC voltage & the corresponding analo
 * Operating temperature : 40ºC ~ + 70ºC     
 * Supply voltage 5 volts to 30 volts       
 
-#### 3. Two Channel Relay Module x1
+#### III. Two Channel Relay Module x1
 
 ![image](https://github.com/user-attachments/assets/2685989e-1ca3-4bf0-b677-e7a30465cedb)
 
@@ -76,7 +76,7 @@ The Modules can measure voltage within 250V AC voltage & the corresponding analo
 * AC Control Voltage: 250V @max.10A  
 * DC Control Voltage: 30V @max. 10A   
   
-#### 4. ESP-WROOM-32 x1
+#### IV. ESP-WROOM-32 x1
 The ESP-WROOM-32 is a powerful Wi-Fi + Bluetooth combo module developed by Espressif, and it's the core module in many ESP32-based development boards. Here's a quick breakdown of its key features and why it's popular in IoT and embedded systems projects:
 
 ![image](https://github.com/user-attachments/assets/ee644498-e422-44f8-a43a-6212c5a91a60)
@@ -97,7 +97,7 @@ The ESP-WROOM-32 is a powerful Wi-Fi + Bluetooth combo module developed by Espre
 * Operating Voltage: 3.0V to 3.3V    
 * Power Consumption: Ultra-low power modes supported   
   
-#### 5. OLED display x1 (SSD1306 0.96 inch )
+#### V. OLED display x1 (SSD1306 0.96 inch )
 An OLED (organic light-emitting diode) is used frequently in displaying texts, bitmap images, shapes, and different types of clocks. They offer good view angles and pixel density in a cost-effective manner.
 
 
@@ -112,9 +112,11 @@ An OLED (organic light-emitting diode) is used frequently in displaying texts, b
 * VCC	: 3.3V-5V    
 * Operating Temperature	: -40℃ to +80℃   
 
-#### 6. Capacitor(10µF) x2
+#### VI. Capacitor(10µF) x2
 
 <img src="https://github.com/user-attachments/assets/729d783d-8176-4e05-8085-85eec1a4d77f" width="30%" />
+
+### 5. Circuit Diagram
 
 
 
