@@ -116,7 +116,33 @@ An OLED (organic light-emitting diode) is used frequently in displaying texts, b
 
 <img src="https://github.com/user-attachments/assets/729d783d-8176-4e05-8085-85eec1a4d77f" width="30%" />
 
-### 5. Circuit Diagram
+### 5. Software Used 
+
+* Arduino IDE :
+  The Arduino IDE (Integrated Development Environment) is a software platform used to write, compile, and upload code to Arduino boards. It's the main tool used to program Arduino-based microcontrollers.
+
+* Circuit Designer :
+   It is a tool that let you create, simulate, and share electronic circuits right from your browser, without needing to install anything.
+ 
+### 6. Circuit Diagram
+
+![circuit_image (1)](https://github.com/user-attachments/assets/0b1b877a-8d76-43c8-ad8c-1618a8dff117)
+
+Component----ESP32
+Current_1---- 32          
+Current_2---- 33       
+Relay_1---- 25     
+Relay_2---- 26       
+Voltage---- 34 & 35        
+OLED Display     
+Vcc-------	3.3V       
+GND-------	GND     
+SCK-------	 22      
+SDA-------	 21      
+##### Complete Circuit Diagram
+
+![circuit_image (2)](https://github.com/user-attachments/assets/b0a84bff-8a7f-4a4e-81d6-cfe60ebf9531)
+
 
 
 
