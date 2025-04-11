@@ -72,7 +72,19 @@ The Modules can measure voltage within 250V AC voltage & the corresponding analo
   
 * Supply voltage 5 volts to 30 volts
 
-#### 3. Relay x2
+#### 3. Two Channel Relay Module x1
+
+![image](https://github.com/user-attachments/assets/2685989e-1ca3-4bf0-b677-e7a30465cedb)
+
+* Low Level Trigger Relay Module
+* Two separate LEDs for On/Off indication of the Relay.
+* Triggering input voltage 3.3V – 5V.
+* Back EMF protection
+* Opto isolation circuitry
+* Module with diode current protection, short response time
+* AC Control Voltage: 250V @max.10A
+* DC Control Voltage: 30V @max. 10A
+  
 #### 4. ESP-WROOM-32 x1
 #### 5. OLED display x1
 #### 6. Capacitor(10µF) x2
