@@ -187,7 +187,7 @@ You can:
 * Monitor real-time values (current, voltage, power).     
 * Control LOAD1 and LOAD2 using switches in the app.    
 
-### 6. Circuit Diagram
+### 7. Circuit Diagram
 
 ![circuit_image (1)](https://github.com/user-attachments/assets/0b1b877a-8d76-43c8-ad8c-1618a8dff117)
 
