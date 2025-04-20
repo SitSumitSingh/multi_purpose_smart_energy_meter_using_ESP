@@ -116,6 +116,20 @@ An OLED (organic light-emitting diode) is used frequently in displaying texts, b
 
 <img src="https://github.com/user-attachments/assets/729d783d-8176-4e05-8085-85eec1a4d77f" width="30%" />
 
+#### VII. Buck Converter x1
+
+A buck converter is a type of DC-DC converter that steps down voltage from its input (supply) to its output (load). It’s widely used in power electronics to efficiently supply lower voltages from higher ones, like converting 12V to 5V in embedded systems.
+
+![image](https://github.com/user-attachments/assets/d48c53c4-c60a-4fec-91d4-3e16100c0411)
+
+###### Specification
+* Input voltage: 3-40V
+* Output voltage: 1.5-35V(Adjustable)
+* Output current: Rated current is 2A, maximum 3A
+* Switching Frequency: 150KHz
+* Operating temperature:Industrial grade (-40 to +85 )
+* Conversion efficiency: 92%(highest)
+
 ### 5. Software Used 
 
 * Arduino IDE :
