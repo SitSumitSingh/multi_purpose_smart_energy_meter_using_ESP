@@ -122,7 +122,7 @@ A buck converter is a type of DC-DC converter that steps down voltage from its i
 
 ![image](https://github.com/user-attachments/assets/d48c53c4-c60a-4fec-91d4-3e16100c0411)
 
-###### Specification
+##### Specification
 * Input voltage: 3-40V
 * Output voltage: 1.5-35V(Adjustable)
 * Output current: Rated current is 2A, maximum 3A
@@ -137,7 +137,56 @@ A buck converter is a type of DC-DC converter that steps down voltage from its i
 
 * Circuit Designer :
    It is a tool that let you create, simulate, and share electronic circuits right from your browser, without needing to install anything.
- 
+
+* Blynk IOT:
+  Blynk IoT is a popular platform for building IoT (Internet of Things) applications that allows you to control and monitor hardware devices (like ESP32, ESP8266, Arduino, etc.) from your smartphone or web dashboard — without needing to build your own backend infrastructure.
+
+### 6. Block Diagram
+
+![image](https://github.com/user-attachments/assets/41fcf83a-922f-4e7e-960e-1b655d835d9c)
+
+This is a block diagram of a dual-load IoT-based energy monitoring and control system using an ESP32 microcontroller, integrating Blynk IoT, CT sensors, voltage transformer, relays, and display. Here's a breakdown of each block:
+🔌 1. Power Supply (Left Side):   
+Provides the AC power to both LOAD1 and LOAD2.    
+This AC supply is monitored for current and voltage.    
+
+🔋 2. LOAD1 and LOAD2:      
+Two different electrical loads (e.g., lights, fans, appliances) being powered and monitored.        
+Relays are used to control (ON/OFF) these loads through the ESP32.     
+
+🧲 3. CT1 and CT2 (Current Transformers):     
+* CT1 monitors the current drawn by LOAD1.      
+* CT2 monitors the current drawn by LOAD2.     
+These sensors measure current and send analog signals to the ESP32 for processing.  
+
+⚡ 4. VT (Voltage Transformer):    
+Measures the line voltage.    
+Sends a scaled-down analog signal to the ESP32 for safe voltage sensing.     
+
+🧠 5. ESP32 Microcontroller:      
+Core processing unit of the system.   
+Tasks:      
+* Reads current from CT1 and CT2.    
+* Reads voltage from VT.    
+* Calculates power consumption.     
+* Controls the relays (thus, LOAD1 and LOAD2).   
+* Sends data to the Blynk Cloud via Wi-Fi.   
+* Displays real-time values on a connected display (likely OLED or LCD).    
+
+📟 6. Display:    
+Shows local real-time data such as:   
+* Voltage   
+* Current   
+* Power usage for each load   
+* Possibly cost, energy consumed, etc.   
+
+🌐 7. Blynk IoT System (Cloud + Mobile App):    
+The ESP32 is connected to the Blynk cloud over Wi-Fi.    
+A smartphone app communicates with Blynk cloud.   
+You can:   
+* Monitor real-time values (current, voltage, power).     
+* Control LOAD1 and LOAD2 using switches in the app.    
+
 ### 6. Circuit Diagram
 
 ![circuit_image (1)](https://github.com/user-attachments/assets/0b1b877a-8d76-43c8-ad8c-1618a8dff117)
