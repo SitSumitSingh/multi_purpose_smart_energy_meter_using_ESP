@@ -207,6 +207,11 @@ SDA-------	 21
 ![circuit_image (2)](https://github.com/user-attachments/assets/b0a84bff-8a7f-4a4e-81d6-cfe60ebf9531)
 
 
+### 8. PCB design:  
+
+![WhatsApp Image 2025-04-20 at 10 58 07_8cbd12aa](https://github.com/user-attachments/assets/029e4e7f-7cef-4f65-a04a-7146cae0063a)
+
+![WhatsApp Image 2025-04-20 at 10 58 11_fbe9134e](https://github.com/user-attachments/assets/828b1e5f-b65d-4837-9851-699688a43aa9)
 
 
 
