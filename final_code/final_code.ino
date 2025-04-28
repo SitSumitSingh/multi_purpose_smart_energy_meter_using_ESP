@@ -12,9 +12,9 @@
 #include <HTTPClient.h>
 
 // OLED Display
-//#define SCREEN_WIDTH 128
-//#define SCREEN_HEIGHT 64
-//Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // Sensor instances
 EnergyMonitor emon1;
@@ -58,7 +58,7 @@ void setup() {
   Serial.println("\nConnected to WiFi");
   Blynk.begin(auth, ssid, password);
 
-  /*if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println("SSD1306 allocation failed");
     while (true);
   }
@@ -69,7 +69,7 @@ void setup() {
   display.setCursor(0, 0);
   display.println("Smart Energy Meter");
   display.display();
-  delay(1000); */
+  delay(1000); 
 
   pinMode(relay1, OUTPUT);
   pinMode(relay2, OUTPUT);
@@ -131,7 +131,7 @@ void loop() {
   Blynk.virtualWrite(V9, relay1);
   Blynk.virtualWrite(V10, relay2);
   Blynk.virtualWrite(V11, voltage2);
-/*
+
   display.clearDisplay();
   display.setCursor(0, 0);
   display.println("Load 1:");
@@ -150,7 +150,7 @@ void loop() {
   display.print("I:"); display.print(current2); display.println("A");
   display.print("P:"); display.print(realPower2); display.println("W");
   display.print("E:"); display.print(totalEnergy2, 3); display.println("kWh");
-  display.display();*/
+  display.display();
 }
 
 void sendToGoogleSheets(float voltage1, float current1, float realPower1, float apparentPower1,
