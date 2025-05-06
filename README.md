@@ -130,6 +130,11 @@ A buck converter is a type of DC-DC converter that steps down voltage from its i
 * Operating temperature:Industrial grade (-40 to +85 )
 * Conversion efficiency: 92%(highest)
 
+#### VIII. Vero board x1
+
+![image](https://github.com/user-attachments/assets/04ed2800-c4ef-48f1-bd5a-97d4fa715546)
+
+
 ### 5. Software Used 
 
 * Arduino IDE :
