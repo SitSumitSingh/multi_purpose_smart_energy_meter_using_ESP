@@ -245,6 +245,13 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
 
 
 
+- **PRE-REQUISITES**
+  - Install **Ubuntu 24.04** (22.04 is fine too) on **WSL2**. [See instructions here](https://github.com/silicon-vlsi-org/eda-wsl2)
+  - Create a [GitHub](https://github.com) account if you don't have one already.
+- Create a fork of this repo and clone it on your WSL Linux.
+- Check [LM70 Datasheet](docs/datasheet-LM70-TI-tempSensor.pdf)
+  - Check the basic electrical characteristics: Supply voltage range, temperature range, temperature resolution and accuracy, timing diagram (p-6), temperature data format (p-10).
+  - **EXCERCISE** From the timing diagram specification (p:5-6), find the _maximum_ and _minimum_ clock frequency (SCK) the sensor can operate.
 
 
   
