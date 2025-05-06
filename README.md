@@ -186,8 +186,7 @@ Shows local real-time data such as:
 * Possibly cost, energy consumed, etc.   
 
 🌐 7. Blynk IoT System (Cloud + Mobile App):    
-The ESP32 is connected to the Blynk cloud over Wi-Fi.    
-A smartphone app communicates with Blynk cloud.   
+The ESP32 is connected to the Blynk cloud over Wi-Fi. A smartphone app communicates with Blynk cloud.   
 You can:   
 * Monitor real-time values (current, voltage, power).     
 * Control LOAD1 and LOAD2 using switches in the app.    
@@ -217,6 +216,10 @@ SDA-------	 21
 ![WhatsApp Image 2025-04-20 at 10 58 07_8cbd12aa](https://github.com/user-attachments/assets/029e4e7f-7cef-4f65-a04a-7146cae0063a)
 
 ![WhatsApp Image 2025-04-20 at 10 58 11_fbe9134e](https://github.com/user-attachments/assets/828b1e5f-b65d-4837-9851-699688a43aa9)
+
+### 9. Algorithm:
+
+
 
 
 
