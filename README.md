@@ -221,21 +221,21 @@ SDA-------	 21
 Objective: Monitor voltage, current, power, energy consumption, and cost for two electrical loads using an ESP32. Control relays based on power thresholds, display data on an OLED screen, send data to Blynk for remote monitoring, and log data to Google Sheets.     
 1. Initialization
 - Serial Communication:
-  -Begin serial communication at 115200 baud for debugging.
+  Begin serial communication at 115200 baud for debugging.
 - Wi-Fi Connection:
-  -Attempt to connect to the specified Wi-Fi network using provided SSID and password.
-  -Wait until the connection is established.
+  Attempt to connect to the specified Wi-Fi network using provided SSID and password.
+  Wait until the connection is established.
 - Blynk Initialization:
-  -Initialize Blynk with the provided authentication token, SSID, and password.
+  Initialize Blynk with the provided authentication token, SSID, and password.
 - OLED Display Setup:
-  -Initialize the OLED display.
-  -Display a startup message.
+  Initialize the OLED display.
+  Display a startup message.
 - Relay Configuration:
-  -Set relay pins as outputs.
-  -Ensure both relays are initially turned off.
+  Set relay pins as outputs.
+  Ensure both relays are initially turned off.
 - Sensor Calibration:
-  -Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
-  -Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
+  Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
+  Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
 
 
 
