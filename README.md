@@ -222,6 +222,7 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
 1. Initialization
    * Serial Communication: Begin serial communication at 115200 baud for debugging.
    * Wi-Fi Connection:
+     
       -Attempt to connect to the specified Wi-Fi network using provided SSID and password.
       -Wait until the connection is established.
    * Blynk Initialization:
