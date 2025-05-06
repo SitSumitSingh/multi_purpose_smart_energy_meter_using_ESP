@@ -220,23 +220,22 @@ SDA-------	 21
 ### 9. Algorithm:
 Objective: Monitor voltage, current, power, energy consumption, and cost for two electrical loads using an ESP32. Control relays based on power thresholds, display data on an OLED screen, send data to Blynk for remote monitoring, and log data to Google Sheets.     
 1. Initialization
-   
-   - Serial Communication:
-      -Begin serial communication at 115200 baud for debugging.
-   - Wi-Fi Connection:
-      -Attempt to connect to the specified Wi-Fi network using provided SSID and password.
-      -Wait until the connection is established.
-   - Blynk Initialization:
-      -Initialize Blynk with the provided authentication token, SSID, and password.
-   - OLED Display Setup:
-      -Initialize the OLED display.
-      -Display a startup message.
-   - Relay Configuration:
-      -Set relay pins as outputs.
-      -Ensure both relays are initially turned off.
-   - Sensor Calibration:
-      -Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
-      -Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
+- Serial Communication:
+  -Begin serial communication at 115200 baud for debugging.
+- Wi-Fi Connection:
+  -Attempt to connect to the specified Wi-Fi network using provided SSID and password.
+  -Wait until the connection is established.
+- Blynk Initialization:
+  -Initialize Blynk with the provided authentication token, SSID, and password.
+- OLED Display Setup:
+  -Initialize the OLED display.
+  -Display a startup message.
+- Relay Configuration:
+  -Set relay pins as outputs.
+  -Ensure both relays are initially turned off.
+- Sensor Calibration:
+  -Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
+  -Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
 
 
 
@@ -245,13 +244,6 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
 
 
 
-- **PRE-REQUISITES**
-  - Install **Ubuntu 24.04** (22.04 is fine too) on **WSL2**. [See instructions here](https://github.com/silicon-vlsi-org/eda-wsl2)
-  - Create a [GitHub](https://github.com) account if you don't have one already.
-- Create a fork of this repo and clone it on your WSL Linux.
-- Check [LM70 Datasheet](docs/datasheet-LM70-TI-tempSensor.pdf)
-  - Check the basic electrical characteristics: Supply voltage range, temperature range, temperature resolution and accuracy, timing diagram (p-6), temperature data format (p-10).
-  - **EXCERCISE** From the timing diagram specification (p:5-6), find the _maximum_ and _minimum_ clock frequency (SCK) the sensor can operate.
 
 
   
