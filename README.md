@@ -150,7 +150,8 @@ A buck converter is a type of DC-DC converter that steps down voltage from its i
 
 ![image](https://github.com/user-attachments/assets/41fcf83a-922f-4e7e-960e-1b655d835d9c)
 
-This is a block diagram of a dual-load IoT-based energy monitoring and control system using an ESP32 microcontroller, integrating Blynk IoT, CT sensors, voltage transformer, relays, and display. Here's a breakdown of each block:
+This is a block diagram of a dual-load IoT-based energy monitoring and control system using an ESP32 microcontroller, integrating Blynk IoT, CT sensors, voltage transformer, relays, and display. Here's a breakdown of each block:   
+
 🔌 1. Power Supply (Left Side):   
 Provides the AC power to both LOAD1 and LOAD2.    
 This AC supply is monitored for current and voltage.    
