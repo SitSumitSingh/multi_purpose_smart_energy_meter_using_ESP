@@ -365,6 +365,46 @@ This section describes how RMS voltage is measured using the ZMPT101B voltage se
 - The **calibration factor** should be adjusted based on known voltage measurements for better accuracy.
 - Sampling delay and count can be fine-tuned depending on application needs (e.g., 50Hz or 60Hz mains).
 
+###10. Flowchart
+![image](https://github.com/user-attachments/assets/a2b3d280-4cca-409e-b9cb-f4b33259cbd1)
+
+#### 🧭 System Workflow Overview (Flowchart Explanation)
+The following section describes the overall flow of the ESP32-based Smart Energy Monitoring and Control system. This flow is visualized in the project flowchart.
+**🔄 Process Breakdown:**
+***🔹 1. Start & Initialization***
+- **Initialize ESP32:** Begin the system setup.
+- **Setup Wi-Fi:** Connect to a predefined Wi-Fi network to enable Blynk and Google Sheets communication.
+- **Initialize OLED Display:** Prepare the OLED screen (optional) for real-time data visualization.
+- **Set Relays OFF & Initialize Sensors:** Both relay pins are set to OFF initially. Voltage and current sensors (ZMPT101B & SCT-013-000) are configured.
+
+***🔹 2. Data Acquisition***
+- **Calculate Voltage & Current:** Using sensor data, compute voltage (V), current (I), power values, and other metrics.
+- **Display Real-Time Data on OLED:** Sensor values such as voltage, current, power, and energy are updated on the OLED in real time (if enabled).
+
+***🔹 3. Data Logging***
+- **Push to Blynk Database:** Live values are sent to the Blynk dashboard for mobile monitoring.
+- **Push to Google Sheets:** Data is also logged to a Google Sheet via a Google Apps Script Web App for historical analysis.
+
+***🔹 4. Load Control Logic***
+- **Check Load 1 Power:**
+  - If **Load 1 power > 200W**, turn **Relay 1 ON**.
+  - Otherwise, keep **Relay 1 OFF**.
+- **Check Load 2 Power:**
+  - If **Load 2 power > 1500W**, turn **Relay 2 ON**.
+  - Otherwise, turn **Relay 2 OFF**.
+
+*** 🔹 5. Loop Timing***
+- A **10-second delay** is introduced before the next iteration of measurement and control logic begins.
+
+**✅ Summary:**
+This workflow ensures:
+- Continuous monitoring of two electrical loads.
+- Automated control of connected relays based on power thresholds.
+- Real-time visualization via OLED and Blynk app.
+- Long-term logging using Google Sheets for analysis or billing.
+
+#### 📌 This smart energy system is ideal for home automation, load management, and energy consumption tracking applications.
+
 
 
 
