@@ -221,33 +221,70 @@ SDA-------	 21
 ### 9. Algorithm:
 Objective: Monitor voltage, current, power, energy consumption, and cost for two electrical loads using an ESP32. Control relays based on power thresholds, display data on an OLED screen, send data to Blynk for remote monitoring, and log data to Google Sheets.    
 
-***1. Initialization***
-- **Serial Communication:**
-  - Begin serial communication at 115200 baud for debugging.
-- **Wi-Fi Connection:**
-  - Attempt to connect to the specified Wi-Fi network using provided SSID and password.
-  - Wait until the connection is established.
-- **Blynk Initialization:**
-  - Initialize Blynk with the provided authentication token, SSID, and password.
-- **OLED Display Setup:**
-  - Initialize the OLED display.
-  - Display a startup message.
-- **Relay Configuration:**
-  - Set relay pins as outputs.
-  - Ensure both relays are initially turned off.
-- **Sensor Calibration:**
-  Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
-  Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
+ ***✅ 1. Initialization Phase (`setup()`)***
+- 1.1. **Start Serial Communication**
+   - Begin Serial Monitor at **baud rate 115200** for debugging.
+- 1.2. **Set Analog Resolution**
+  - Set **ADC resolution to 10 bits** using `analogReadResolution(10);`, suitable for reading analog sensor signals.
+- 1.3. **Connect to Wi-Fi**
+  - Start Wi-Fi using the provided **SSID and password**.
+  - Keep trying until the connection is established.
+- 1.4. **Start Blynk Connection**
+  - Connect to **Blynk** using the **template ID** and **auth token**.
+- 1.5. **(Optional) Initialize OLED Display**
+  - OLED initialization code is present but commented out.
+  - If enabled, it displays a **welcome message**.
+- 1.6. **Configure Relay Pins**
+- Set `relay1` and `relay2` as **outputs**.
+- Initialize them to **LOW (off)** state.
+- 1.7. **Initialize Energy Monitors**
+  - `emon1` and `emon2` are set up to monitor:
+  - **Voltage** using **ZMPT101B** with a calibration constant of **520**.
+  - **Current** using **SCT-013-000** with calibration constants:
+    - **25** for Load 1
+    - **95** for Load 2
 
-***2. Main Loop***
-- **Blynk Handling:**
-  - Run Blynk to handle any incoming or outgoing data.
-- **Sensor Data Acquisition:**
-  - For both sensors (`emon1` and `emon2`):
-    - Perform voltage and current measurements over 20 cycles with a timeout of 2000 milliseconds.
-    - Calculate RMS voltage (Vrms), RMS current (Irms), real power, apparent power, and power factor.
-    - Take the absolute value of each measurement to ensure positivity.
+ ***🔁 2. Continuous Monitoring Loop (`loop()`)***
+- 2.1. **Run Blynk**
+  - Ensures real-time communication with the **Blynk app**.
+  - 2.2. **Sample Voltage & Current**
+  - Call `calcVI(20, 2000)` for both `emon1` and `emon2`:
+  - Measures **20 half-cycles** (~1 second at 50Hz).
+  - Timeout after **2000 ms**.
+- 2.3. **Extract RMS & Power Values**
+  - Read **voltage, current, real power, and apparent power**.
+  - Use `fabs()` to take **absolute values** and filter out negative noise.
+- 2.4. **Energy & Cost Calculation (every 10 seconds)**
+  - Check if **10 seconds** have passed using `millis()`.
+  - If so:
+    - **Energy (kWh)** = Power (W) × Time (hr)       
+      `(realPower × interval / 3600000.0) / 1000`
+    - **Cost** = Energy × ₹10/kWh
+    - - Send data to **Google Sheets** via a URL with query parameters.
+ - 2.5. **Relay Control**
+   - **Turn ON** relay if **real power > 100W**, else **turn OFF**.
+ - 2.6. **Send Data to Blynk App**
+   - Push the following to **Blynk virtual pins**:
+   - **Voltage, Current, Energy, Power Factor, Cost, Relay State** (for both loads)
+ - 2.7. **OLED Display**
+   - Code for OLED is available but **commented out**.
+   - Alternates display between **Load 1 and Load 2** every 2 seconds.
+ ***🌐 3. Google Sheets Logging (`sendToGoogleSheets()`)***
+- 3.1. **Construct URL**
+   - Build a **GET request URL** with all sensor readings and calculations.
+- 3.2. **Send HTTP GET Request**
+  - Send data using `http.GET()` to a **Google Apps Script Web App**.
+  - Print **success/failure** status to Serial Monitor.
 
+ ***📦 Summary of Main Components Used***
+
+| Component       | Purpose                                      |
+|----------------|----------------------------------------------|
+| **EmonLib**     | For calculating voltage, current, and power. |
+| **WiFi + Blynk**| Real-time monitoring on mobile app.          |
+| **Google Sheets** | Cloud-based logging for history/tracking. |
+| **Relays**      | Automatic load control based on power usage. |
+| **OLED (optional)** | Local display for power/energy info.    |
 
 
 
