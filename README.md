@@ -219,29 +219,29 @@ SDA-------	 21
 ![WhatsApp Image 2025-04-20 at 10 58 11_fbe9134e](https://github.com/user-attachments/assets/828b1e5f-b65d-4837-9851-699688a43aa9)
 
 ### 9. Algorithm:
-Objective: Monitor voltage, current, power, energy consumption, and cost for two electrical loads using an ESP32. Control relays based on power thresholds, display data on an OLED screen, send data to Blynk for remote monitoring, and log data to Google Sheets.     
-1. Initialization
-- Serial Communication:
-  Begin serial communication at 115200 baud for debugging.
-- Wi-Fi Connection:
-  Attempt to connect to the specified Wi-Fi network using provided SSID and password.
-  Wait until the connection is established.
-- Blynk Initialization:
-  Initialize Blynk with the provided authentication token, SSID, and password.
-- OLED Display Setup:
-  Initialize the OLED display.
-  Display a startup message.
-- Relay Configuration:
-  Set relay pins as outputs.
-  Ensure both relays are initially turned off.
-- Sensor Calibration:
+Objective: Monitor voltage, current, power, energy consumption, and cost for two electrical loads using an ESP32. Control relays based on power thresholds, display data on an OLED screen, send data to Blynk for remote monitoring, and log data to Google Sheets.    
+
+***1. Initialization***
+- **Serial Communication:**
+  - Begin serial communication at 115200 baud for debugging.
+- **Wi-Fi Connection:**
+  - Attempt to connect to the specified Wi-Fi network using provided SSID and password.
+  - Wait until the connection is established.
+- **Blynk Initialization:**
+  - Initialize Blynk with the provided authentication token, SSID, and password.
+- **OLED Display Setup:**
+  - Initialize the OLED display.
+  - Display a startup message.
+- **Relay Configuration:**
+  - Set relay pins as outputs.
+  - Ensure both relays are initially turned off.
+- **Sensor Calibration:**
   Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
   Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
 
-2. Main Loop
+***2. Main Loop***
 - **Blynk Handling:**
   - Run Blynk to handle any incoming or outgoing data.
-
 - **Sensor Data Acquisition:**
   - For both sensors (`emon1` and `emon2`):
     - Perform voltage and current measurements over 20 cycles with a timeout of 2000 milliseconds.
