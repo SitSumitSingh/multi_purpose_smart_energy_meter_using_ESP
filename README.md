@@ -235,14 +235,14 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
   - OLED initialization code is present but commented out.
   - If enabled, it displays a **welcome message**.
 - 1.6. **Configure Relay Pins**
-- Set `relay1` and `relay2` as **outputs**.
+  - Set `relay1` and `relay2` as **outputs**.
 - Initialize them to **LOW (off)** state.
 - 1.7. **Initialize Energy Monitors**
   - `emon1` and `emon2` are set up to monitor:
-  - **Voltage** using **ZMPT101B** with a calibration constant of **520**.
-  - **Current** using **SCT-013-000** with calibration constants:
-    - **25** for Load 1
-    - **95** for Load 2
+    - **Voltage** using **ZMPT101B** with a calibration constant of **520**.
+    - **Current** using **SCT-013-000** with calibration constants:
+      - **25** for Load 1
+      - **95** for Load 2
 
  ***🔁 2. Continuous Monitoring Loop (`loop()`)***
 - 2.1. **Run Blynk**
@@ -260,7 +260,7 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
     - **Energy (kWh)** = Power (W) × Time (hr)       
       `(realPower × interval / 3600000.0) / 1000`
     - **Cost** = Energy × ₹10/kWh
-    - - Send data to **Google Sheets** via a URL with query parameters.
+    - Send data to **Google Sheets** via a URL with query parameters.
  - 2.5. **Relay Control**
    - **Turn ON** relay if **real power > 100W**, else **turn OFF**.
  - 2.6. **Send Data to Blynk App**
@@ -269,7 +269,8 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
  - 2.7. **OLED Display**
    - Code for OLED is available but **commented out**.
    - Alternates display between **Load 1 and Load 2** every 2 seconds.
- ***🌐 3. Google Sheets Logging (`sendToGoogleSheets()`)***
+
+***🌐 3. Google Sheets Logging (`sendToGoogleSheets()`)***
 - 3.1. **Construct URL**
    - Build a **GET request URL** with all sensor readings and calculations.
 - 3.2. **Send HTTP GET Request**
