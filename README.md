@@ -238,8 +238,10 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
   Voltage Sensors:Calibrate voltage sensors connected to pins 32 and 33 with a calibration constant of 520 and a phase shift of 1.
   Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
 
-
-
+2. Main Loop
+- Blynk Handling:
+ -- Run Blynk to handle any incoming or outgoing data.
+- Sensor Data Acquisition:
 
 
 
