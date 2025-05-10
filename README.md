@@ -366,7 +366,8 @@ This section describes how RMS voltage is measured using the ZMPT101B voltage se
 - Sampling delay and count can be fine-tuned depending on application needs (e.g., 50Hz or 60Hz mains).
 
 ###10. Flowchart
-![image](https://github.com/user-attachments/assets/a2b3d280-4cca-409e-b9cb-f4b33259cbd1)
+![image](https://github.com/user-attachments/assets/a2b3d280-4cca-409e-b9cb-f4b33259cbd1)        
+
 
 #### 🧭 System Workflow Overview (Flowchart Explanation)
 The following section describes the overall flow of the ESP32-based Smart Energy Monitoring and Control system. This flow is visualized in the project flowchart.
