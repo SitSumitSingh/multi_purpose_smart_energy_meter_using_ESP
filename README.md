@@ -239,9 +239,10 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
   Current Sensors:Calibrate current sensors connected to pins 34 and 35 with calibration constants of 25 and 95, respectively. 
 
 2. Main Loop
-- Blynk Handling:
- -- Run Blynk to handle any incoming or outgoing data.
-- Sensor Data Acquisition:
+- Blynk Handling: Run Blynk to handle any incoming or outgoing data.
+- Sensor Data Acquisition:For both sensors (emon1 and emon2):
+** Perform voltage and current measurements over 20 cycles with a timeout of 2000 milliseconds.
+  **Calculate RMS voltage (Vrms), RMS current (Irms), real power, apparent power, and power factor.
 
 
 
