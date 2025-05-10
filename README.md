@@ -287,6 +287,41 @@ Objective: Monitor voltage, current, power, energy consumption, and cost for two
 | **Relays**      | Automatic load control based on power usage. |
 | **OLED (optional)** | Local display for power/energy info.    |
 
+### ⚙️ Current Caliberation Algorithm (SCT-013-030)
+This section explains how the RMS current is calculated from the analog signal of the SCT-013-000 current sensor.
+
+**🔄 Algorithm Steps:**
+***1. Define Constants:***
+   - `sensorPin` is set to **A0**, where the SCT-013-000 sensor is connected.
+   - `calibration` factor is set to **30.0**, based on the burden resistor and ADC scaling.
+   - `VREF` is set to **5.0V**, the Arduino's reference voltage.
+
+***2. Initialize Serial Communication:***
+   - Start **Serial Monitor** at 115200 baud for debugging and data plotting.
+
+***3. Sampling Loop:***
+   - Take **200 samples** in each loop cycle for a smooth RMS calculation.
+   - For each sample:
+     - Read analog value from the sensor pin using `analogRead(sensorPin)`.
+     - Convert the raw value to voltage using:  
+       `voltage = (sensorValue / 1023.0) * VREF`
+     - Convert voltage to instantaneous current using:  
+       `current = (voltage - VREF/2) * calibration`
+     - Square the current and add to a running sum:  
+       `sum += current * current`
+     - Print the instantaneous current value to the Serial Plotter.
+
+***4. Calculate RMS Current:***
+   - After 200 samples, calculate RMS current as:  
+     `rmsCurrent = sqrt(sum / sampleSize)`
+   - Print the RMS current to the Serial Monitor.
+
+***5. Delay:***
+   - Wait **1 second** before repeating the loop to allow stable output.
+
+**📌 Notes:**
+- This code assumes the sensor outputs a centered AC signal around **VREF/2**.
+- Adjust the `calibration` constant if using a different burden resistor or ADC resolution.
 
 
 
