@@ -2,7 +2,7 @@
 -------------------------------------------------------------------
 
 ### 1. Abstract 
-The IoT-Based Smart Energy Meter is an intelligent energy monitoring system designed to measure and track voltage, current, power consumption, and cost estimation for multiple household appliances, including a Fan, Air Conditioner, and Bulb etc. The system utilizes an ESP32 microcontroller connected to current and voltage sensors (SCT-013-000 & ZMPT101B) to obtain real-time energy data. This data is processed and displayed on an OLED screen, sent to an IoT dashboard (Blynk, Firebase, or Google Sheets), and stored for historical analysis.
+The IoT-Based Smart Energy Meter is an intelligent energy monitoring system designed to measure and track voltage, current, power consumption, and cost estimation for multiple household appliances. The system utilizes an ESP32 microcontroller connected to current and voltage sensorsto obtain real-time energy data. This data is processed, displayed and sent to an IoT dashboard and stored for historical analysis.
 
 The project incorporates relays and for remote appliance control while ensuring electrical safety. A Google Sheets webhook is integrated to log energy data for further analysis. Machine Learning algorithms can be applied to predict usage patterns and optimize energy consumption.
 
@@ -322,6 +322,48 @@ This section explains how the RMS current is calculated from the analog signal o
 **📌 Notes:**
 - This code assumes the sensor outputs a centered AC signal around **VREF/2**.
 - Adjust the `calibration` constant if using a different burden resistor or ADC resolution.
+
+### ⚡ Voltage Caliberation Algorithm (ZMPT101B)**
+This section describes how RMS voltage is measured using the ZMPT101B voltage sensor and an Arduino.
+
+**🔄 Algorithm Steps:**
+***1. Define Constants:***
+   - `ZMPT101B_PIN` is set to **A0**, where the voltage sensor is connected.
+   - `calibrationFactor` is set to **687**, used to convert the measured RMS voltage to the actual AC voltage.
+   - `sampleCount` is set to **1000**, for higher measurement accuracy.
+   - `offsetVoltage` is set to **2.5V**, assuming a centered AC waveform from the sensor.
+
+***2. Initialize Serial Communication:***
+   - Start **Serial Monitor** at **115200 baud** to view voltage readings and debug output.
+
+***3. Sampling Loop:***
+   - Initialize `squaredSum` to store the sum of squared voltages.
+   - For each of the **1000 samples**:
+     - Read the raw analog value from the ZMPT101B sensor:  
+       `sensorValue = analogRead(ZMPT101B_PIN)`
+     - Convert the raw ADC value to voltage using:  
+       `voltage = sensorValue * (5.0 / 1023.0)`
+     - Subtract the **offset voltage** (2.5V) to center the waveform around 0V.
+     - Square the corrected voltage and add it to `squaredSum`.
+     - Optionally print each corrected voltage value for visualization in the Serial Plotter.
+     - Delay for **1000 microseconds** between samples for adequate resolution.
+
+***4. Calculate RMS Voltage:***
+   - After sampling, compute RMS voltage using:  
+     `rmsVoltage = sqrt(squaredSum / sampleCount)`
+
+***5. Output Results:***
+   - Print the **RMS voltage**.
+   - Multiply the RMS voltage by the **calibration factor** to get the final voltage reading.
+   - Display both values on the **Serial Monitor**.
+
+***6. Delay:***
+   - Add a small delay (**500 ms**) before the next reading cycle.
+
+**📌 Notes:**
+- The **offset voltage** is crucial for removing the DC bias from the ZMPT101B output.
+- The **calibration factor** should be adjusted based on known voltage measurements for better accuracy.
+- Sampling delay and count can be fine-tuned depending on application needs (e.g., 50Hz or 60Hz mains).
 
 
 
