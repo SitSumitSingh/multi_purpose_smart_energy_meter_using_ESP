@@ -371,8 +371,10 @@ This section describes how RMS voltage is measured using the ZMPT101B voltage se
 
 
 #### 🧭 System Workflow Overview (Flowchart Explanation)
-The following section describes the overall flow of the ESP32-based Smart Energy Monitoring and Control system. This flow is visualized in the project flowchart.
-**🔄 Process Breakdown:**
+The following section describes the overall flow of the ESP32-based Smart Energy Monitoring and Control system. This flow is visualized in the project flowchart.   
+
+**🔄 Process Breakdown:**     
+
 ***🔹 1. Start & Initialization***
 - **Initialize ESP32:** Begin the system setup.
 - **Setup Wi-Fi:** Connect to a predefined Wi-Fi network to enable Blynk and Google Sheets communication.
