@@ -365,7 +365,8 @@ This section describes how RMS voltage is measured using the ZMPT101B voltage se
 - The **calibration factor** should be adjusted based on known voltage measurements for better accuracy.
 - Sampling delay and count can be fine-tuned depending on application needs (e.g., 50Hz or 60Hz mains).
 
-###10. Flowchart
+### 10. Flowchart    
+
 ![image](https://github.com/user-attachments/assets/a2b3d280-4cca-409e-b9cb-f4b33259cbd1)        
 
 
@@ -394,7 +395,7 @@ The following section describes the overall flow of the ESP32-based Smart Energy
   - If **Load 2 power > 1500W**, turn **Relay 2 ON**.
   - Otherwise, turn **Relay 2 OFF**.
 
-*** 🔹 5. Loop Timing***
+***🔹 5. Loop Timing***
 - A **10-second delay** is introduced before the next iteration of measurement and control logic begins.
 
 **✅ Summary:**
@@ -406,6 +407,40 @@ This workflow ensures:
 
 #### 📌 This smart energy system is ideal for home automation, load management, and energy consumption tracking applications.
 
+### Result Verification
+- voltage calibration
+  <img src="https://github.com/user-attachments/assets/fc0fddae-db76-40be-8ed9-573777307657" width="300"/>
+  <img src="https://github.com/user-attachments/assets/edc18380-b1aa-4ee6-b384-194475b4841b" width="300"/>
+
+- 100W bulb as a low load
+  ![image](https://github.com/user-attachments/assets/eec3cb63-95fc-48f5-8b68-03255661d5ad)
+
+- 1350W electrickettle as a high load
+  ![image](https://github.com/user-attachments/assets/cdf7f053-c3a1-4a05-8d70-dd0cda2bf949)
+
+- SCT current sensor installation
+  ![image](https://github.com/user-attachments/assets/f5a3feff-aa7e-4627-b5e0-857084bed0ee)
+
+- Complete project installation
+  ![image](https://github.com/user-attachments/assets/df5bceda-a837-47a0-baec-9aa65ad01981)
+
+- BLYNK App Dashboard
+  ![image](https://github.com/user-attachments/assets/6f52976d-e07a-4f6b-b875-0f2ecc7beff6)
+
+- Google sheet view for data logging
+  ![image](https://github.com/user-attachments/assets/53c85a11-896f-4dd0-955f-7e4cf8bb17ea)
+
+### Result Analysis
+
+Parameter	Expected Result	Observed Result
+Current Reading	Accurate (within ±7%)	✅ Within tolerance
+Voltage Reading	Measured (within ±7%)	✅ Within tolerance
+Real Power	Calculated by EmonLib	✅ Matches approx usage
+Energy Consumption	Cumulative kWh	✅ calculated
+Data to Blynk	Real-time display & control	✅ Successful
+Data to Google Sheets	HTTP data logging	✅ Successful logging
+Relay Function	Auto/manual ON/OFF	✅ Verified
+  
 
 
 
