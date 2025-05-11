@@ -482,7 +482,12 @@ This project empowers users with valuable insights into their electricity usage 
 
 In conclusion, the project demonstrates how **affordable hardware** and **open-source tools** can be effectively combined to create a practical, scalable smart energy solution with real-world relevance, especially in **smart homes and sustainable environments**.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+A special thanks to :
+1. Mr. Smruti Ranjan rout [GitHub]https://github.com/smrutiranjan2004
+2. mr. Sumit Singh [GitHub]https://github.com/SitSumitSingh
+3. Mr. Priyanshu Sinha [GitHub]https://github.com/PriyanshuSINHA1947
 
 
   
