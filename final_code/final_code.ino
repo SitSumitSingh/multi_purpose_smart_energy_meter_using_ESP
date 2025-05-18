@@ -1,7 +1,7 @@
 // ESP32 Energy Meter Project with Blynk, OLED, and Google Sheets Logging
 
-#define BLYNK_TEMPLATE_ID "TMPL3Qsws3AHY"
-#define BLYNK_TEMPLATE_NAME "ESP32 Energy Meter"
+#define BLYNK_TEMPLATE_ID 
+#define BLYNK_TEMPLATE_NAME 
 
 #include "EmonLib.h"
 #include <Wire.h>
@@ -21,12 +21,12 @@ EnergyMonitor emon1;
 EnergyMonitor emon2;
 
 // WiFi & Blynk credentials
-const char* auth = "glHi0F5zH6ThzO6BQV3MgVV6V3wMR824";
+const char* auth = "*auth*";
 const char* ssid = "realme C11";
 const char* password = "12345678";
 
 // Google Sheets Web App URL
-String googleSheetsURL = "https://script.google.com/macros/s/AKfycbxJqIcWyJ-dIAJc7JnAAAJiiT2v_PjbEkIYto3D4v-7DlxOwsOkgIi2lCbB3bV8nYI/exec";
+String googleSheetsURL = "*google sheet appscript token*";
 
 // Sensor and Relay Pins
 const int voltagePin1 = 32;
